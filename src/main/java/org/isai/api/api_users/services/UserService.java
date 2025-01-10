@@ -17,4 +17,7 @@ public class UserService {
         return repository.findAll();
     }
 
+    public UserModel saveUser(UserModel user) {
+        return repository.save(user);
+    }
 }
