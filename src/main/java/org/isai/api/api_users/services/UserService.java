@@ -25,4 +25,12 @@ public class UserService {
     public Optional<UserModel> getUserByID(Long id) {
         return repository.findById(id);
     }
+
+    public UserModel updateUserByID(UserModel request, Long id) {
+        UserModel user = repository.findById(id).get();
+        user.setFirtName(request.getFirtName());
+        user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
+        return user;
+    }
 }
