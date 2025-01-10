@@ -31,6 +31,7 @@ public class UserService {
         user.setFirtName(request.getFirtName());
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
+        repository.save(user);
         return user;
     }
 
