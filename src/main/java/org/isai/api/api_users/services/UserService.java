@@ -1,6 +1,7 @@
 package org.isai.api.api_users.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.isai.api.api_users.models.UserModel;
 import org.isai.api.api_users.repositories.IUserRepository;
@@ -19,5 +20,9 @@ public class UserService {
 
     public UserModel saveUser(UserModel user) {
         return repository.save(user);
+    }
+
+    public Optional<UserModel> getUserByID(Long id) {
+        return repository.findById(id);
     }
 }
