@@ -33,4 +33,13 @@ public class UserService {
         user.setEmail(request.getEmail());
         return user;
     }
+
+    public boolean deleteUserByID(Long id) {
+        try {
+            repository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
